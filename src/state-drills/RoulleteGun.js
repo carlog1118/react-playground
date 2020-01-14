@@ -3,8 +3,7 @@ import React from 'react';
 class RouletteGun extends React.Component{
     static defaultProps= {
         bulletInChamber: 8
-    }
-    
+    }    
     constructor(props){
         super(props)
         this.state={
@@ -12,11 +11,9 @@ class RouletteGun extends React.Component{
             spinningTheChamber: false
         }
     }
-
     componentWillUnmount() {
         clearTimeout(this.timeout)
     }
-
     handleClick =  () => {
         this.setState({
             spinningTheChamber: true,
@@ -29,7 +26,6 @@ class RouletteGun extends React.Component{
             })
         }, 2000)
     }
-
     renderDisplay() {
         const {chamber, spinningTheChamber} = this.state
         const { bulletInChamber} = this.props
@@ -41,9 +37,6 @@ class RouletteGun extends React.Component{
             return 'you\'re safe!'
         }
     }
-
-
-
     render(){
         console.log(this.state)
         return (
